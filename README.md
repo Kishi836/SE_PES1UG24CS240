@@ -1,0 +1,15 @@
+# Software Engineering Lab — UE24CS351A
+
+**Kshitij G Shettigar** · PES1UG24CS240 · CSE · Semester 5
+PES University
+
+Lab submissions for the Software Engineering course. One folder per lab.
+
+**Assigned scenario:** Problem Statement #52 — *Community Tool & Equipment Library*
+A neighbourhood resource-sharing library where members borrow power tools, camping
+gear and lawnmowers. The system handles security deposits, loan-duration limits,
+return dates, late fees and damage assessments.
+
+| Lab | Topic | Folder |
+|-----|-------|--------|
+| 1 | Requirements Engineering — FRs/NFRs, UML use-case diagram, use-case specification | [`Lab1/`](Lab1/) |
