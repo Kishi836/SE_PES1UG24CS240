@@ -1,4 +1,4 @@
-# Software Engineering Lab — UE24CS351A
+# Software Engineering Lab — UE24CS341A
 
 **Kshitij G Shettigar** · PES1UG24CS240 · CSE · Semester 5
 PES University
@@ -13,3 +13,5 @@ return dates, late fees and damage assessments.
 | Lab | Topic | Folder |
 |-----|-------|--------|
 | 1 | Requirements Engineering — FRs/NFRs, UML use-case diagram, use-case specification | [`Lab1/`](Lab1/) |
+| 2 | Agile backlog creation & sprint simulation in Jira | [`Lab2/`](Lab2/) |
+| 3 | Component modelling & architectural pattern selection — UML component diagram, architecture justification | [`Lab3/`](Lab3/) |
