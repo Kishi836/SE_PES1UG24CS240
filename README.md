@@ -15,3 +15,4 @@ return dates, late fees and damage assessments.
 | 1 | Requirements Engineering — FRs/NFRs, UML use-case diagram, use-case specification | [`Lab1/`](Lab1/) |
 | 2 | Agile backlog creation & sprint simulation in Jira | [`Lab2/`](Lab2/) |
 | 3 | Component modelling & architectural pattern selection — UML component diagram, architecture justification | [`Lab3/`](Lab3/) |
+| 4 | VibeCoding — AI-assisted bug fix and feature work on a Pygame game (Lava Escape) | [`Lab4/`](Lab4/) |

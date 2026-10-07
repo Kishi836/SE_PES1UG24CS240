@@ -1,0 +1,42 @@
+import pygame
+
+SPEED = 4
+SPRING_VEL = -22  # ~409px apex vs ~135px for a normal jump (3x)
+
+class Player:
+    def __init__(self, x, y):
+        self.rect = pygame.Rect(x, y, 32, 32)
+        self.vel_y = 0
+        self.on_ground = False
+        self.standing_on = None
+        self.color = (60,160,220)
+
+    def update(self, keys, platforms, width):
+        dx = 0
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]: dx = -SPEED
+        if keys[pygame.K_RIGHT] or keys[pygame.K_d]: dx = SPEED
+        if (keys[pygame.K_SPACE] or keys[pygame.K_w] or keys[pygame.K_UP]) and self.on_ground:
+            self.vel_y = -13
+            self.on_ground = False
+
+        self.vel_y = min(self.vel_y + 0.55, 12)
+        self.rect.x = max(0, min(width - self.rect.width, self.rect.x + dx))
+        prev_bottom = self.rect.bottom
+        self.rect.y += int(self.vel_y)
+        self.on_ground = False
+        self.standing_on = None
+        for p in platforms:
+            # land only when falling and the feet were above the top edge last frame
+            if self.vel_y > 0 and self.rect.colliderect(p) and prev_bottom <= p.top:
+                self.rect.bottom = p.top
+                self.vel_y = 0
+                self.on_ground = True
+                self.standing_on = p
+                if p.kind == "spring":
+                    self.vel_y = SPRING_VEL
+                    self.on_ground = False
+
+    def draw(self, screen, cam_y):
+        dr = self.rect.move(0, -int(cam_y))
+        pygame.draw.rect(screen, self.color, dr, border_radius=6)
+        pygame.draw.circle(screen,(255,220,180),(dr.centerx, dr.top+8),7)
